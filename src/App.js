@@ -13,9 +13,12 @@ import backworkouts from './images/backworkouts.jpg';
 import gluteworkouts from './images/gluteworkouts.jpg';
 import legworkouts from './images/legworkouts.jpg';
 import shoulderworkouts from './images/shoulderworkout.jpg';
+
 import './header.css'; // Import the CSS file for the header
 import './App.css';
+
 import Header from './Header';
+import Footer from './footer';
 import { FaArrowUp } from 'react-icons/fa';
 
 
@@ -264,7 +267,7 @@ function App() {
         </article>
       </div>
 
-      <section id='exercices'>
+      <section id='exercises'>
   <h2 id="muscle-group-title" className="muscle-group-title">Muscle Groups</h2>
 </section>
 
@@ -426,7 +429,7 @@ function App() {
         </table>
       )}
       
-<section className="contact-section">
+<section id="contact-us" className="contact-section">
 
   
   <div className="contact-form">
@@ -463,15 +466,11 @@ function App() {
       referrerPolicy="no-referrer-when-downgrade"
     ></iframe>
   </div>
-
+  
         </section>
+        <Footer/>
       </div>
-
-    
   );
-
-
-
 
 }
 
