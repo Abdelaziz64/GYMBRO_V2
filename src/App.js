@@ -16,6 +16,7 @@ import shoulderworkouts from './images/shoulderworkout.jpg';
 
 import './header.css'; // Import the CSS file for the header
 import './App.css';
+import AboutUsSection from './AboutUsSection';
 
 import Header from './Header';
 import Footer from './footer';
@@ -242,6 +243,8 @@ function App() {
         </div>
         <img className="banner-image" src={bannerImage} alt="Banner" />
       </section>
+
+      <AboutUsSection />
 
       <section id="articles">
       <h2 className="articles-title">Articles to Unlock Your Potential</h2>
