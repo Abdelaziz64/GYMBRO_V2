@@ -3,11 +3,13 @@ import Modal from 'react-modal';
 import about_us from './images/about_us.jpg';
 import './AboutUsSection.css';
 
+import { useLanguage } from './LanguageContext';
+
 const AboutUsSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
   const [showPaymentInfo, setShowPaymentInfo] = useState(false);
-
+  const { language } = useLanguage();
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
@@ -47,23 +49,29 @@ const AboutUsSection = () => {
 
   return (
     <section id="about-us" className="about-us-section">
-      <div className="about-us-content">
-        <div className="about-us-image">
-          <img src={about_us} alt="About Us" />
-        </div>
-        <div className="about-us-text">
-          <h2>Subscribe and Get Personalized Workout Plans</h2>
-          <p>
-            By subscribing to our plan, you will receive a monthly personalized workout plan tailored to your specific needs and goals. We take into account your age, weight, height, and other relevant information to create a workout plan that suits you best.
-          </p>
-          <p>
-            Start your fitness journey with us and experience the benefits of having an updated workout plan each month based on your progress and results. We are committed to helping you achieve your fitness goals and providing you with the guidance you need.
-          </p>
-          <button className="subscription-button" onClick={toggleModal}>
-            Only 9.99$/month
-          </button>
-        </div>
+    <div className="about-us-content">
+      <div className="about-us-image">
+        <img src={about_us} alt="About Us" />
       </div>
+      <div className="about-us-text">
+        <h2>
+          {language === 'en' ? 'Subscribe and Get Personalized Workout Plans' : "Abonnez-vous et obtenez des plans d'entrainement personnalises"}
+        </h2>
+        <p>
+          {language === 'en'
+            ? 'By subscribing to our plan, you will receive a monthly personalized workout plan tailored to your specific needs and goals. We take into account your age, weight, height, and other relevant information to create a workout plan that suits you best.'
+            : 'En vous abonnant à notre plan, vous recevrez chaque mois un plan d\'entraînement personnalisé adapté à vos besoins et à vos objectifs spécifiques. Nous prenons en compte votre âge, votre poids, votre taille et d\'autres informations pertinentes pour créer un plan d\'entraînement qui vous convient le mieux.'}
+        </p>
+        <p>
+          {language === 'en'
+            ? 'Start your fitness journey with us and experience the benefits of having an updated workout plan each month based on your progress and results. We are committed to helping you achieve your fitness goals and providing you with the guidance you need.'
+            : 'Commencez votre parcours de remise en forme avec nous et profitez des avantages d\'avoir un plan d\'entraînement mis à jour chaque mois en fonction de vos progrès et de vos résultats. Nous nous engageons à vous aider à atteindre vos objectifs de remise en forme et à vous fournir les conseils dont vous avez besoin.'}
+        </p>
+        <button className="subscription-button" onClick={toggleModal}>
+          {language === 'en' ? 'Only $9.99/month' : 'Seulement 9,99$/mois'}
+        </button>
+      </div>
+    </div>
       <Modal
         isOpen={isModalOpen}
         onRequestClose={handleModalClose}

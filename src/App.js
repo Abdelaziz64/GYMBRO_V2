@@ -17,6 +17,7 @@ import shoulderworkouts from './images/shoulderworkout.jpg';
 import './header.css'; // Import the CSS file for the header
 import './App.css';
 import AboutUsSection from './AboutUsSection';
+import { LanguageProvider } from './LanguageContext';
 
 import Header from './Header';
 import Footer from './footer';
@@ -26,8 +27,31 @@ import { FaArrowUp } from 'react-icons/fa';
 
 
 function App() {
-  
+  const [showPopup, setShowPopup] = useState(false);
   const [showButton, setShowButton] = useState(false);
+
+  
+
+  const handleSendMessage = (event) => {
+    event.preventDefault(); // Prevent the form from submitting and page refresh
+  
+    // Your logic to send the message goes here
+    // ...
+  
+    const isFormFilled =
+      document.getElementById('first-name').value &&
+      document.getElementById('last-name').value &&
+      document.getElementById('email').value &&
+      document.getElementById('message').value;
+  
+    if (isFormFilled) {
+      setShowPopup(true); // Show the pop-up
+    } else {
+      // Show an error message or handle the case when the form is not filled
+      // For example, you can display an error message or highlight the empty fields.
+    }
+  };
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -223,6 +247,8 @@ function App() {
 
 
   return (
+
+    <LanguageProvider>
     <div className="App" style={{ backgroundColor: "#f4f4f4" }}>
       <div>
       <Header />
@@ -432,11 +458,9 @@ function App() {
         </table>
       )}
       
-<section id="contact-us" className="contact-section">
-
-  
+      <section id="contact-us" className="contact-section">
   <div className="contact-form">
-  <h2 className="contact-title">Contact Us</h2>
+    <h2 className="contact-title">Contact Us</h2>
     <form>
       <div className="form-group">
         <label htmlFor="first-name">First Name</label>
@@ -454,9 +478,20 @@ function App() {
         <label htmlFor="message">Message</label>
         <textarea id="message" placeholder="Message"></textarea>
       </div>
-      <button type="submit">Send Message</button>
+      <button type="submit" id="send-message-btn" onClick={handleSendMessage}>
+  Send Message
+</button>
+
+{showPopup && (
+  <div className="popup">
+    <p>Your message has been successfully sent!</p>
+    <button onClick={() => setShowPopup(false)}>Close</button>
+  </div>
+)}
     </form>
   </div>
+
+  
   <div className="map-container">
     <iframe
       title="Google Maps"
@@ -473,6 +508,7 @@ function App() {
         </section>
         <Footer/>
       </div>
+      </LanguageProvider>
   );
 
 }

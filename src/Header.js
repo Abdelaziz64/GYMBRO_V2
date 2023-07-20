@@ -1,30 +1,32 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-
-const translations = {
-  en: {
-    home: 'HOME',
-    articles: 'ARTICLES',
-    exercises: 'EXERCISES',
-    buildWorkout: 'BUILD WORKOUT',
-    contactUs: 'CONTACT US',
-    brand: 'GYMBRO',
-  },
-  fr: {
-    home: 'ACCUEIL',
-    articles: 'ARTICLES',
-    exercises: 'EXERCICES',
-    buildWorkout: 'CONSTRUIRE UN PROGRAMME',
-    contactUs: 'NOUS CONTACTER',
-    brand: 'GYMBRO',
-  },
-};
+import { useLanguage } from './LanguageContext'; // Import the useLanguage hook
 
 function Header() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [language, setLanguage] = useState('en');
+  const { language, setLanguage, } = useLanguage(); // Access the language and changeLanguage function from the LanguageContext
+  const changeLanguage = (selectedLanguage) => {
+    setLanguage(selectedLanguage);
+  };
   const dropdownRef = useRef(null);
+  const translations = {
+    en: {
+      home: 'HOME',
+      articles: 'ARTICLES',
+      exercises: 'EXERCISES',
+      buildWorkout: 'BUILD WORKOUT',
+      contactUs: 'CONTACT US',
+      brand: 'GYMBRO',
+    },
+    fr: {
+      home: 'ACCUEIL',
+      articles: 'ARTICLES',
+      exercises: 'EXERCICES',
+      buildWorkout: 'CONSTRUIRE UN PROGRAMME',
+      contactUs: 'NOUS CONTACTER',
+      brand: 'GYMBRO',
+    },}
 
   useEffect(() => {
     const handleResize = () => {
@@ -53,6 +55,8 @@ function Header() {
     }
   };
 
+  
+
   useEffect(() => {
     window.addEventListener('click', handleOutsideClick);
 
@@ -61,16 +65,12 @@ function Header() {
     };
   }, []);
 
-  const changeLanguage = (selectedLanguage) => {
-    setLanguage(selectedLanguage);
-  };
-
-  const LanguageSelector = () => {
+  const LanguageSelector = ({ changeLanguage }) => {
     const handleToggleLanguage = () => {
       const newLanguage = language === 'en' ? 'fr' : 'en';
       changeLanguage(newLanguage);
     };
-  
+
     return (
       <button className="language-button" onClick={handleToggleLanguage}>
         {language === 'en' ? 'FR' : 'EN'}
@@ -132,7 +132,7 @@ function Header() {
             )}
           </div>
         )}
-        <LanguageSelector />
+        <LanguageSelector changeLanguage={changeLanguage}/>
       </nav>
     </header>
   );
