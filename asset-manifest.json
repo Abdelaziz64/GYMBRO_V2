@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/GYMBRO_V2/static/css/main.176420b4.css",
+    "main.js": "/GYMBRO_V2/static/js/main.6f6a4481.js",
+    "static/media/abs.jpg": "/GYMBRO_V2/static/media/abs.5fea683368c272556437.jpg",
+    "static/media/calves.jpg": "/GYMBRO_V2/static/media/calves.19ba79ce00381f410d27.jpg",
+    "static/media/crossfit.jpg": "/GYMBRO_V2/static/media/crossfit.f65d4b1eb68dcde7a8f4.jpg",
+    "static/media/forearms.jpg": "/GYMBRO_V2/static/media/forearms.cf16f758369e49c31756.jpg",
+    "static/media/about_us.jpg": "/GYMBRO_V2/static/media/about_us.06bc8671beef9676584f.jpg",
+    "static/media/strenght.jpg": "/GYMBRO_V2/static/media/strenght.10d74583b2f0bba24f33.jpg",
+    "static/media/nutrition.jpg": "/GYMBRO_V2/static/media/nutrition.dec1888c1c739a714de6.jpg",
+    "static/media/full_body.jpg": "/GYMBRO_V2/static/media/full_body.118f5f39791550d422d9.jpg",
+    "static/media/chestworkouts.jpg": "/GYMBRO_V2/static/media/chestworkouts.7bd6a65821d0ef7486a1.jpg",
+    "static/media/gluteworkouts.jpg": "/GYMBRO_V2/static/media/gluteworkouts.d8bbe6972f9c22a925da.jpg",
+    "static/media/legworkouts.jpg": "/GYMBRO_V2/static/media/legworkouts.487ce391e5b3396d8433.jpg",
+    "static/media/bicepworkouts.jpg": "/GYMBRO_V2/static/media/bicepworkouts.3ae337c38beaa4fda45c.jpg",
+    "static/media/tricepworkouts.jpg": "/GYMBRO_V2/static/media/tricepworkouts.a3d58320efc95af99b71.jpg",
+    "static/media/backworkouts.jpg": "/GYMBRO_V2/static/media/backworkouts.b7915f46273426cb711c.jpg",
+    "static/media/shoulderworkout.jpg": "/GYMBRO_V2/static/media/shoulderworkout.d93d36f401509d03c68d.jpg",
+    "index.html": "/GYMBRO_V2/index.html",
+    "main.176420b4.css.map": "/GYMBRO_V2/static/css/main.176420b4.css.map",
+    "main.6f6a4481.js.map": "/GYMBRO_V2/static/js/main.6f6a4481.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.176420b4.css",
+    "static/js/main.6f6a4481.js"
+  ]
+}
